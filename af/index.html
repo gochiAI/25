@@ -23,7 +23,7 @@
 </script>
 <meta property="og:title" content="「Maid by Rabbits」公式サイト">
 <meta property="og:site_name" content="「Maid by Rabbits」公式サイト">
-<meta property="og:description" content="ここですね…　煩悩の犬たちが立てこもる屋敷は…">
+<meta property="og:description" content="ここですね…　worldly desiresの犬たちが立てこもるmansionは…">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gochiusa.com/af/">
 <meta property="og:image" content="https://gochiusa.com/af/core_sys/images/others/ogp.jpg">
@@ -227,10 +227,10 @@ $(function() {
       </div>
       <div class="first__button">
         <button @click="$emit('next-page',  isClear ? 'ClearTitlePage' : 'TitlePage')" class="doorBtn">
-          <span class="doorBtn__text">開始</span>
+          <span class="doorBtn__text">Dispel worldly desires</span>
           <img :src="images.door">
         </button>
-        <p>音声が流れますので、一緒にお楽しみください。</p>
+        <p>Please note that audio will be played.</p>
       </div> 
     </div>`,
   };
@@ -252,7 +252,7 @@ $(function() {
         <div class="title__bg"><img :src="images.title"></div>
         <div class="title__button">
           <button @click="$emit('next-page', 'OpeningPage')" class="doorBtn">
-            <span class="doorBtn__text">開始</span>
+            <span class="doorBtn__text">Dispel worldly desires</span>
             <img :src="images.door">
           </button>
         </div> 
@@ -277,7 +277,7 @@ $(function() {
         <div class="opening__head js-scroll-fade" ref="scene-head" :class="{ 'is-visible': isVisible('scene-head') }"><img :src="images.head"></div>
         <div v-for="(scene, index) in scenes" :key="index" :ref="scene" class="opening__scene js-scroll-fade" :class="[{ 'is-visible': isVisible(scene)}, scene]"><img :src="images[scene]"></div>
         <div class="opening__btn js-scroll-fade" ref="scene-btn" :class="{ 'is-visible': isVisible('scene-btn') }"><button @click="$emit('next-page', 'QuizPage')" class="doorBtn">
-          <span class="doorBtn__text">屋敷を探索</span>
+          <span class="doorBtn__text">Explore the mansion</span>
           <img :src="images.door"></button>
         </div>
       </div>
@@ -360,7 +360,7 @@ $(function() {
           </div>
           <div class="quiz__back">
             <div class="doorBtn_h-wrap">
-              <button @click="$emit('next-page', 'TitlePage')" class="doorBtn_h -small">タイトルへ</button>
+              <button @click="$emit('next-page', 'TitlePage')" class="doorBtn_h -small">Back to Title</button>
             </div> 
           </div>
         </div>
@@ -382,10 +382,10 @@ $(function() {
           <img :src="'core_sys/images/main/result/'+currentResult.chara+'.jpg'"> 
         </div>
         <div class="result__info">
-          <em>煩悩</em>は<em>大広間</em>に移動しました。
+          <em>worldly desires</em> has been moved to <em>the hall</em>.
           <div class="result-btns">
-            <button @click="$emit('next-page', 'HiromaPage')" class="doorBtn_h">大広間へ</button>
-            <button @click="$emit('next-page', 'PhotoPage')" class="doorBtn_h -photo">煩悩と記念撮影</button>
+            <button @click="$emit('next-page', 'HiromaPage')" class="doorBtn_h">Go to hall</button>
+            <button @click="$emit('next-page', 'PhotoPage')" class="doorBtn_h -photo">Dispel worldly desires</button>
           </div>
         </div>
       </div>
@@ -411,7 +411,7 @@ $(function() {
         </a>
       </div>
       <div class="photo__link">
-        <button @click="$emit('next-page', 'ResultPage')" class="doorBtn_h">戻る</button>
+        <button @click="$emit('next-page', 'ResultPage')" class="doorBtn_h">Back</button>
       </div>
     </div>`
   };
@@ -447,7 +447,7 @@ $(function() {
       },
     },
     template: `<div class="hiroma">
-      <div class="hiroma__master">{{ allResultsUnlocked ? "全員揃いました！Let'sお祓い！" : '全員揃わないと祓えません～' }}
+      <div class="hiroma__master">{{ allResultsUnlocked ? "TEN DEFILEMENTS are all here!Let's exorcise!" : 'Unless TEN DEFILEMENTS are all present, they cannot be exorcised!' }}
         <div class="hiroma-icon">
           <img :src="images.aoyama">
         </div>
@@ -461,11 +461,11 @@ $(function() {
       </div>
       <div class="hiroma__link">
         <button @click="$emit('next-page', 'QuizPage')" class="doorBtn">
-          <span class="doorBtn__text">屋敷を探索</span>
+          <span class="doorBtn__text">Explore the mansion</span>
           <img :src="images.door">
         </button>
         <button v-if="allResultsUnlocked" @click="$emit('next-page', 'OharaiPage')" class="doorBtn">
-          <span class="doorBtn__text">お払いの儀式</span>
+          <span class="doorBtn__text">Exorcism</span>
           <img :src="images.candle">
         </button>
       </div>
@@ -545,14 +545,14 @@ $(function() {
         <div class="hiroma-icon">
           <img :src="images.aoyama">
         </div>
-        <p>お払いの言葉を唱えましょう<br>せーのっ…</p>
+        <p>Let's chant the words of exorcism.<br>Ready...</p>
       </div>
       <div class="oharai__input">
         <input type="text" v-model="userInput" name="keyword" @input="resetError">
       </div>
       <div class="oharai__btn">
-        <button @click="checkKeyword">唱える</button>
-        <p v-if="isCorrect === false" class="error">ぶっぶー<br><em>{{userInput}}</em><br>じゃないよー</p>
+        <button @click="checkKeyword">recite</button>
+        <p v-if="isCorrect === false" class="error">No,no<br><em>{{userInput}}</em><br></p>
       </div>
 
     </div>`
@@ -607,7 +607,7 @@ $(function() {
     },
     template: `
       <div class="clear">
-        <div class="clear__message" :class="{ fadeOut: !showMessage }">みんな　ただいま！</div>
+        <div class="clear__message" :class="{ fadeOut: !showMessage }">Hey everyone, I'm home!</div>
         <div class="clear__img" @click="$emit('next-page', 'CongratsPage')">
           <div class="imgFadeWrap">
             <img :src="images.kv01" :class="{ 'active': currentIndex === 0, 'inactive': currentIndex === 1 }">
@@ -639,8 +639,8 @@ $(function() {
         </div>
         <div class="congratu__info">
           <div class="result-btns">
-            <button @click="$emit('next-page', 'ClearTitlePage')" class="doorBtn_h">タイトル</button>
-            <button @click="$emit('next-page', 'WallPage')" class="doorBtn_h -photo">全員と記念写真</button>
+            <button @click="$emit('next-page', 'ClearTitlePage')" class="doorBtn_h">Title</button>
+            <button @click="$emit('next-page', 'WallPage')" class="doorBtn_h -photo">Let's take a picture so we remember this.</button>
           </div>
         </div>
       </div>
@@ -674,7 +674,7 @@ $(function() {
         </div>
         <div class="wall__btn">
           <div class="result-btns">
-            <button @click="$emit('next-page', 'CongratsPage')" class="doorBtn_h">戻る</button>
+            <button @click="$emit('next-page', 'CongratsPage')" class="doorBtn_h">Back</button>
           </div>
         </div>
       </div>
@@ -698,7 +698,7 @@ $(function() {
       <div class="clearTitle__body">
         <div class="clearTitle-logo"><img :src="images.logo"></div>
         <button @click="$emit('next-page', 'TitlePage')" class="doorBtn_h">
-          メイドに会う
+          Meet the Maid
         </button>
       </div> 
     </div>`,
@@ -754,96 +754,96 @@ $(function() {
         quizData: [
           {
             id: "q01",
-            question: "どっちを探索する？",
-            choices: ["薄汚れた絵画の部屋", "廃れた書庫"],
+            question: "Which options to explored?",
+            choices: ["Dirty painting room", "closed stacks"],
             next: ['q02', 'q03']
           },
           {
             id: "q02",
-            question: "絵の中の一枚が自分を見ている気がした",
-            choices: ["見つめ返す", "目を背ける"],
+            question: "I felt like one of the paintings was looking at me.",
+            choices: ["stare back at", "turn one's back on"],
             next: ['q04', 'q05']
           },
           {
             id: "q03",
-            question: "しかし絵画の部屋から声がした<br>「あなたに伝えたいことがある」",
-            choices: ["絵画の部屋に向かう", "あーあー　聞こえません"],
+            question: "But a voice came from the painting room.<br>“I have something to tell you.”",
+            choices: ["Head to the painting room.", "Let's pretend I didn't hear you."],
             next: ['q05', 'q06']
           },
           {
             id: "q04",
-            question: "しかし何も起きなかった",
-            choices: ["もう少し探索する", "部屋を出る"],
+            question: "But nothing happened.",
+            choices: ["I'll explore some more.", "leave the room"],
             next: ['q07', 'q08']
           },
           {
             id: "q05",
-            question: "絵画は言う<br>「あなたの後悔を知っている」",
-            choices: ["あーあーと叫びながら逃げる", "絵と向き合う"],
+            question: "The painting says<br> “I know your regrets.”",
+            choices: ["Running away while screaming “ahhhhh!”", "face the painting"],
             next: ['q08', 'q09']
           },
           {
             id: "q06",
-            question: "突如　足元が崩れ出し地下室に落ちてしまった",
-            choices: ["話を聞きますので<br>助けてくださーい！", "地下室を探索しましょう"],
+            question: "Suddenly, her footing collapsed and she fell into the basement.",
+            choices: ["I will listen to what you have to say<br>Please help me!", "Let's explore the basement."],
             next: ['q09', 'q10']
           },
           {
             id: "q07",
-            question: "二つの扉を見つけた<br>片方には「開けてはいけない」と書かれている",
-            choices: ["開けてはいけない扉へ", "開けていい扉へ"],
+            question: "I found two doors<br>One of them says “Do not open”.",
+            choices: ["To the door that must not be opened.", "To the door that can be opened."],
             next: ['q11', 'q12']
           },
           {
             id: "q08",
-            question: "廃れた書庫に着く<br>適当な本を開いたら本に吸い込まれた！<br>気が付くとそこは…",
-            choices: ["玉座のある部屋", "絵画のある部屋"],
+            question: "I arrived at an closed stacks, opened a random book, and was sucked into the book! Next thing you know, you're in a...",
+            choices: ["Room with a throne", "Room with a painting"],
             next: ['q12', 'q13']
           },
           {
             id: "q09",
-            question: "声のする方向には、<br>かつての自分が描かれた絵があった",
-            choices: ["静かに絵と向き合う", "怖いので逃げる"],
+            question: "In the direction of the voice, <br>there was a painting of my former self",
+            choices: ["Quietly face the painting", "I was scared, so I ran away."],
             next: ['q13', 'q14']
           },
           {
             id: "q10",
-            question: "一方の暗闇から誰かの声がした<br>もう一方は誰かが手招きしている",
-            choices: ["手の方向へ向かう", "声の方向へ向かう"],
+            question: "Someone's voice came from the darkness on the one side<br>and on the other side someone beckoned to her.",
+            choices: ["Towards the beckoning hand.", "Toward the Voice."],
             next: ['q14', 'q15']
           },
           {
             id: "q11",
-            question: "部屋の中のメイドが言った<br>外に出たいけど<br>この部屋は二人のうちどちらかしか出られない",
-            choices: ["私が出ます！", "メイドさんを出します！"],
+            question: "The maid in the room said<br>I'd like to go outside,<br>but only one of the two of us can leave this room.",
+            choices: ["I leave the room!", "You can leave the room, maid!"],
             next: ['result', 'result'],
             result: [1,2]
           },
           {
             id: "q12",
-            question: "そこは館の主の部屋だった<br>玉座に座る館の主らしき影が問う<br>「ね～なんで<br>たった一人で祓いに来たの～？」",
-            choices: ["全部私の手柄にするんです！", "他に仲間がいないんです…"],
+            question: "It was the room of the master of the house.<br>The shadow that seems to be the master of the house, sitting on her throne, asks <br>“Why did you come here alone to be exorcised?”",
+            choices: ["Because I want all the credit.", "I just don't have any other friends."],
             next: ['result', 'result'],
             result: [3,4]
           },
           {
             id: "q13",
-            question: "部屋に声が響く<br>自分の恥ずかしい過去を朗らかに読み上げている",
-            choices: ["受け入れます後悔しています", "耳を塞いでるので聞こえませーん"],
+            question: "A voice echoes in the room<br>reading cheerfully about myself embarrassing past.",
+            choices: ["I accept, and I regret it.", "I can't hear you because I'm covering my ears."],
             next: ['result', 'result'],
             result: [5,6]
           },
           {
             id: "q14",
-            question: "突如部屋に引きずり込まれた<br>メイドが部屋の隅で難解な小説を<br>朗読している",
-            choices: ["飽きたので踊りましょう", "寝ちゃいましょう…"],
+            question: "Suddenly, you are dragged into a room where<br>a maid is reading a difficult novel in the corner of the room.",
+            choices: ["I'm bored, let's dance.", "I'm bored, let's go to bed..."],
             next: ['result', 'result'],
             result: [7,8]
           },
           {
             id: "q15",
-            question: "鏡が浮かんでいる<br>自分が欲しかったものを持つ<br>誰かが映し出されている<br>どうする？",
-            choices: ["鏡を壊します", "目を背けちゃいます"],
+            question: "A mirror is floating. <br>It is a reflection of someone else, who has what you wanted. <br>What do you do?",
+            choices: ["Break the mirror.", "I turn away from the mirror."],
             next: ['result', 'result'],
             result: [9,10]
           },
