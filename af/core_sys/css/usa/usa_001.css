@@ -460,7 +460,7 @@ body:not(.clearPage) #ap2025 {
 .oharai__input {
   width: 64rem;
   margin: 10rem auto 0;
-  background: url(../../images/main/oharai/input.png) center center/contain no-repeat;
+  background: url(../../images/main/oharai/input_en.png) center center/contain no-repeat;
   padding: 18rem 13rem 6rem;
 }
 .oharai__input input {

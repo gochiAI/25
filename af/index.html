@@ -262,11 +262,11 @@ $(function() {
 
   const OpeningImgs = {
     text: "core_sys/images/main/op/text.png",
-    head: "core_sys/images/main/op/head.png",
-    scene01: "core_sys/images/main/op/scene01.jpg",
-    scene02: "core_sys/images/main/op/scene02.jpg",
-    scene03: "core_sys/images/main/op/scene03.jpg",
-    scene04: "core_sys/images/main/op/scene04.jpg",
+    head: "core_sys/images/main/op/head_en.png",
+    scene01: "core_sys/images/main/op/scene01_en.jpg",
+    scene02: "core_sys/images/main/op/scene02_en.jpg",
+    scene03: "core_sys/images/main/op/scene03_en.jpg",
+    scene04: "core_sys/images/main/op/scene04_en.jpg",
     door: "core_sys/images/main/common/door.png",
   }
   const OpeningPage = {
@@ -487,7 +487,7 @@ $(function() {
 
   const OharaiImgs = {
     aoyama: "core_sys/images/main/hiroma/aoyama.png",
-    input: "core_sys/images/main/oharai/input.png",
+    input: "core_sys/images/main/oharai/input_en.png",
   }
   const OharaiPage = {
     inheritAttrs: false,
@@ -527,9 +527,9 @@ $(function() {
         return this.base64Encode(result); // Base64でエンコード
       },
       checkKeyword() {
-        const encryptedInput = this.xorEncryptDecrypt(this.userInput, this.encryptionKey);
+        // const encryptedInput = this.xorEncryptDecrypt(this.userInput, this.encryptionKey);
 
-        if (encryptedInput === this.correctPhraseEncrypted) {
+        if (this.userInput === "pyonpyon" || this.userInput === "ピョンピョン" || this.userInput === "ぴょんぴょん") {
           this.isCorrect = true;
           this.$emit('next-page', 'ClearPage');
         } else {
