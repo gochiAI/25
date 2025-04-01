@@ -23,7 +23,7 @@
 </script>
 <meta property="og:title" content="「Maid by Rabbits」公式サイト">
 <meta property="og:site_name" content="「Maid by Rabbits」公式サイト">
-<meta property="og:description" content="ここですね…　worldly desiresの犬たちが立てこもるmansionは…">
+<meta property="og:description" content="ここですね…　desiresの犬たちが立てこもるmansionは…">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gochiusa.com/af/">
 <meta property="og:image" content="https://gochiusa.com/af/core_sys/images/others/ogp.jpg">
@@ -227,7 +227,7 @@ $(function() {
       </div>
       <div class="first__button">
         <button @click="$emit('next-page',  isClear ? 'ClearTitlePage' : 'TitlePage')" class="doorBtn">
-          <span class="doorBtn__text">Dispel worldly desires</span>
+          <span class="doorBtn__text">Dispel desires</span>
           <img :src="images.door">
         </button>
         <p>Please note that audio will be played.</p>
@@ -252,7 +252,7 @@ $(function() {
         <div class="title__bg"><img :src="images.title"></div>
         <div class="title__button">
           <button @click="$emit('next-page', 'OpeningPage')" class="doorBtn">
-            <span class="doorBtn__text">Dispel worldly desires</span>
+            <span class="doorBtn__text">Dispel desires</span>
             <img :src="images.door">
           </button>
         </div> 
@@ -382,10 +382,10 @@ $(function() {
           <img :src="'core_sys/images/main/result/'+currentResult.chara+'.jpg'"> 
         </div>
         <div class="result__info">
-          <em>worldly desires</em> has been moved to <em>the hall</em>.
+          <em>desires</em> has been moved to <em>the hall</em>.
           <div class="result-btns">
             <button @click="$emit('next-page', 'HiromaPage')" class="doorBtn_h">Go to hall</button>
-            <button @click="$emit('next-page', 'PhotoPage')" class="doorBtn_h -photo">Dispel worldly desires</button>
+            <button @click="$emit('next-page', 'PhotoPage')" class="doorBtn_h -photo">Dispel desires</button>
           </div>
         </div>
       </div>
